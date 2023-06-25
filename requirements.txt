@@ -4,3 +4,5 @@ openai
 numpy
 pandas
 langchain
+requests
+airtable-python-wrapper
