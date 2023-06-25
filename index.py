@@ -4,6 +4,10 @@ import openai
 from airtable import Airtable
 from llama_index import (
     GPTVectorStoreIndex,
+    SimpleDirectoryReader,
+    download_loader,
+    GPTKeywordTableIndex,
+    SimpleDirectoryReader,
     LLMPredictor,
     PromptHelper,
     ServiceContext
