@@ -1,7 +1,7 @@
 import os
 import streamlit as st
-import openai
-from airtable import Airtable
+import langchain
+
 from llama_index import (
     GPTVectorStoreIndex,
     SimpleDirectoryReader,
@@ -16,6 +16,10 @@ from langchain import OpenAI
 
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 Airtable_TOKEN = os.getenv('AIRTABLE_TOKEN')
+
+AirtableReader = download_loader('AirtableReader')
+reader = AirtableReader(Airtable_TOKEN)
+documents = reader.load_data(table_id="tblP6LQxyOo7JBiJC",base_id="appUkRhauFCWrTrBd")
 
 openai.api_key = OPENAI_API_KEY
 os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
